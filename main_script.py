@@ -13,49 +13,42 @@ from sklearn.utils import shuffle
 from sklearn.metrics import precision_recall_curve
 import math
 import random
+#read the data from the .csv files and shuffle it. 
+credit_card = pd.read_csv("../creditcard.csv")
+credit_card = shuffle(credit_card)
 
-creditcard = pd.read_csv("../creditcard.csv")
-creditcard = shuffle(creditcard)
-
-# train dev test split
-creditcard_train = creditcard.iloc[:200000,:]
-creditcard_dev = creditcard.iloc[200000:244807,:]
-creditcard_test = creditcard.iloc[-40000:,:]
+# slit the data into training,  validation and test 
+credit_card_tr = credit_card.iloc[:200000,:]
+credit_card_vld = credit_card.iloc[200000:240000,:]
+credit_card_ts = credit_card.iloc[-40000:,:]
 
 
 
 # load the pandas dataframe as np array
-train = creditcard_train.as_matrix()
-dev = creditcard_dev.as_matrix()
-test = creditcard_test.as_matrix()
-(m,n) = train.shape
+train_array = credit_card_tr.as_matrix()
+valid_array = credit_card_vld.as_matrix()
+test_array = credit_card_ts.as_matrix()
+(p,q) = train_array.shape
 
-# oversample positive examples on the training set
-train_P = train[train[:,-1] == 1]
+# oversampling of the True examples on the training set
+train_P = train_array[train_array[:,-1] == 1]
 train_P = train_P.repeat(int(200000/500),axis=0)
 
-train = np.append(train,train_P,axis=0)
-train=shuffle(train)
+train_array = np.append(train_array,train_P,axis=0)
+train_array=shuffle(train_array)
 
 # Load and preprocess the data set
-# train/dev/test split 200000/44807/40000
+# train/validation/test split 200000/40000/40000
 train_size = 200000
 
-# extract the X and Y train and dev sets
-train_X = train[:200000,:n-1].T
-train_Y = train[:200000,-1:].T
-dev_X = dev[:,:n-1].T
-dev_Y = dev[:,-1:].T
-test_X = test[:,:n-1].T
-test_Y = test[:,-1:].T
+# extract the X and Y train and validation sets
+train_X = train_array[:200000,:q-1].T
+train_Y = train_array[:200000,-1:].T
+valid_X = valid_array[:,:q-1].T
+valid_Y = valid_array[:,-1:].T
+test_X = test_array[:,:q-1].T
+test_Y = test_array[:,-1:].T
 
-# check dimensions are correct
-print(train_X.shape)
-print(train_Y.shape)
-print(dev_X.shape)
-print(dev_Y.shape)
-print(test_X.shape)
-print(test_Y.shape)
 
 # number of positives in each set
 print(np.sum(train_Y,axis=1))
