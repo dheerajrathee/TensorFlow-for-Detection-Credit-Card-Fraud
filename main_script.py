@@ -1,7 +1,7 @@
 # Application of deep feedforward neural network for fraud detection in credit-card transactions using TensorFlow 
 
 
-
+# Import the required libraries/packages
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
