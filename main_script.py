@@ -1,4 +1,4 @@
-# Application of deep feedforward neural network for fraud detection in credir-card transactions using TensorFlow 
+# Application of deep feedforward neural network for fraud detection in credit-card transactions using TensorFlow 
 
 
 
