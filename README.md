@@ -1,21 +1,30 @@
-# Nature-Scientific-Data-2021
+# Application of TensorFlow for detection of Credit-Card Fraud
 
-We release a 306-channel MEG-BCI data recorded at 1KHz sampling frequency during four mental imagery tasks (i.e. hand imagery, feet imagery, subtraction imagery, and word generation imagery). The dataset contains two sessions of MEG recordings performed on separate days from 17 healthy participants using a typical BCI imagery paradigm. The current dataset will be the only publicly available MEG imagery BCI dataset as per our knowledge. The dataset can be used by the scientific community towards the development of novel pattern recognition machine learning methods to detect brain activities related to MI and CI tasks using MEG signals.
+## Project: 
+To learn and depoy TensorFlow deep learning framework for an financial data analysis application. 
 
-We have provided the MEG BCI dataset in two different file formats:
+## Dataset:
 
-1. Brain Imaging Data Structure **(BIDS)**. To read more [click](https://bids.neuroimaging.io/index.html) and under BIDS format the raw data is avialable in Functional Image File Format **(.fif)** files. To read more [click](https://www.dropbox.com/s/q58whpso2jt9tx0/Fiff.pdf?dl=0) 
-2. MAT-file is the data file format MATLAB **(.mat)**. To read more [click](https://in.mathworks.com/help/matlab/import_export/mat-file-versions.html) 
+The dataset is provided by Udacity under the course Data Analyst NanoDegree Program. Over the past decade, bicycle-sharing systems have been growing in number and popularity in cities across the world. Bicycle-sharing systems allow users to rent bicycles on a very short-term basis for a price. This allows people to borrow a bike from point A and return it at point B, though they can also return it to the same location if they'd like to just go for a ride. Regardless, each bike can serve several users per day.  Thanks to the rise in information technologies, it is easy for a user of the system to access a dock within the system to unlock or return bicycles. These technologies also provide a wealth of data that can be used to explore how these bike-sharing systems are used.  In this project, you will use data provided by Motivate, a bike share system provider for many major cities in the United States, to uncover bike share usage patterns. You will compare the system usage between three large cities: Chicago, New York City, and Washington, DC.  
+The Datasets Randomly selected data for the first six months of 2017 are provided for all three cities. 
 
-In this repository, we have provided Matlab scripts for the following tasks:
+All three of the data files contain the same core six (6) columns:  
+- Start Time (e.g., 2017-01-01 00:07:57) 
+- End Time (e.g., 2017-01-01 00:20:53) 
+- Trip Duration (in seconds - e.g., 776) 
+- Start Station (e.g., Broadway &amp; Barry Ave) 
+- End Station (e.g. Sedgwick St &amp; North Ave) 
+- User Type (Subscriber or Customer).
 
-1. **Step0_script_fif2bids.m** :  Script to convert MEG data from Elekta MEG format (.fif) to .MAT format. 
+The Chicago and New York City files also have the following two columns:  
+- Gender 
+- Birth Year
 
-2. **Step1_script_bids2mat.m** :  Script to convert MEG data from BIDS format to .MAT format. 
+## Learning:
+- Pandas DataFrame Manipulations
+- Basic Pythonic Scripting
+- Appropriate data types (e.g. strings, floats) and data structures (e.g. lists, dictionaries) are chosen to carry out the required analysis tasks.
+- Raw input is solicited and handled correctly to guide the interactive question-answering experience; no errors are thrown when unexpected input is entered.
+- Descriptive statistics are correctly computed and used to answer the questions posed about the data. Raw data is displayed upon request by the user.
 
-3. **Step2_script_mat2features.m** :Script to extract the motor and cognitive imagery features using common spatial patterns (CSP) algorithm. 
 
-4. **Step3_script_ClassifyFeatures.m** :Script for single-trial MEG classification to produce the baseline results. 
-
-
-** Note: We have used [fieldtrip](https://www.fieldtriptoolbox.org/) toolbox for basic pre-processing of MEG BCI dataset. As a dependency we recommend to download and add fieldtrip to your Matlab path if you want to reproduce our results. 
