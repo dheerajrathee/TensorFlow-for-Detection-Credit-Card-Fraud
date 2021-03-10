@@ -5,20 +5,14 @@ To learn and depoy TensorFlow deep learning framework for an financial data anal
 
 ## Dataset:
 
-The dataset is provided by Udacity under the course Data Analyst NanoDegree Program. Over the past decade, bicycle-sharing systems have been growing in number and popularity in cities across the world. Bicycle-sharing systems allow users to rent bicycles on a very short-term basis for a price. This allows people to borrow a bike from point A and return it at point B, though they can also return it to the same location if they'd like to just go for a ride. Regardless, each bike can serve several users per day.  Thanks to the rise in information technologies, it is easy for a user of the system to access a dock within the system to unlock or return bicycles. These technologies also provide a wealth of data that can be used to explore how these bike-sharing systems are used.  In this project, you will use data provided by Motivate, a bike share system provider for many major cities in the United States, to uncover bike share usage patterns. You will compare the system usage between three large cities: Chicago, New York City, and Washington, DC.  
-The Datasets Randomly selected data for the first six months of 2017 are provided for all three cities. 
+The dataset we’re going to use can be downloaded from Kaggle. It contains data about credit card transactions that occurred during a period of two days, with 492 frauds out of 284,807 transactions.
 
-All three of the data files contain the same core six (6) columns:  
-- Start Time (e.g., 2017-01-01 00:07:57) 
-- End Time (e.g., 2017-01-01 00:20:53) 
-- Trip Duration (in seconds - e.g., 776) 
-- Start Station (e.g., Broadway &amp; Barry Ave) 
-- End Station (e.g. Sedgwick St &amp; North Ave) 
-- User Type (Subscriber or Customer).
+All variables in the dataset are numerical. The data has been transformed using PCA transformation(s) due to privacy reasons. The two features that haven’t been changed are Time and Amount. Time contains the seconds elapsed between each transaction and the first transaction in the dataset.
 
-The Chicago and New York City files also have the following two columns:  
-- Gender 
-- Birth Year
+The datasets contains transactions made by credit cards in September 2013 by european cardholders.
+This dataset presents transactions that occurred in two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for 0.172% of all transactions.
+
+It contains only numerical input variables which are the result of a PCA transformation. Unfortunately, due to confidentiality issues, we cannot provide the original features and more background information about the data. Features V1, V2, … V28 are the principal components obtained with PCA, the only features which have not been transformed with PCA are 'Time' and 'Amount'. Feature 'Time' contains the seconds elapsed between each transaction and the first transaction in the dataset. The feature 'Amount' is the transaction Amount, this feature can be used for example-dependant cost-senstive learning. Feature 'Class' is the response variable and it takes value 1 in case of fraud and 0 otherwise.
 
 ## Learning:
 - Pandas DataFrame Manipulations
