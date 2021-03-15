@@ -5,7 +5,7 @@ To learn and depoy TensorFlow deep learning framework for an financial data anal
 
 ## Dataset:
 
-The dataset we’re going to use can be downloaded from Kaggle. It contains data about credit card transactions that occurred during a period of two days, with 492 frauds out of 284,807 transactions.
+The dataset we’re going to use can be downloaded from <a href="https://www.kaggle.com/mlg-ulb/creditcardfraud" target="_blank">Kaggle</a>     . It contains data about credit card transactions that occurred during a period of two days, with 492 frauds out of 284,807 transactions.
 
 All variables in the dataset are numerical. The data has been transformed using PCA transformation(s) due to privacy reasons. The two features that haven’t been changed are Time and Amount. Time contains the seconds elapsed between each transaction and the first transaction in the dataset.
 
